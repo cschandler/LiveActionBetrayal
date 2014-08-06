@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 LiveActionBetrayal
 =======
 Welcome to Live Action Betrayal.
@@ -21,5 +21,4 @@ The Explorer section:
     
 Demo video available at: http://youtu.be/zmj2iPDwuiU
 
->>>>>>> f123a75c098068332a5be9bd052e187d53ce69a7
 ==================
