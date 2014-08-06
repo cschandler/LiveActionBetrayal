@@ -286,7 +286,6 @@
 - (IBAction)sendHaunt:(UIButton *)sender {
     [self sendDataAllExplorers:_appDelegate.explorerGuide];
     [self sendDataToSinglePeer:_appDelegate.traitorGuide];
-    _sendHauntButton.hidden = YES;
 }
 
 

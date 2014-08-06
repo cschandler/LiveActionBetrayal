@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B718D261991AE3400A3E65C /* LoremIpsumHaunt.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7B718D251991AE3400A3E65C /* LoremIpsumHaunt.txt */; };
 		7B97D8D4195BEBC70083210C /* HauntSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B97D8D3195BEBC70083210C /* HauntSelectionViewController.m */; };
 		7B97D8D7195BEDA70083210C /* ViewHauntViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B97D8D6195BEDA70083210C /* ViewHauntViewController.m */; };
 		7BCF6516193A59AA003D7C3E /* StartingScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BCF6515193A59AA003D7C3E /* StartingScreenViewController.m */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7B718D251991AE3400A3E65C /* LoremIpsumHaunt.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LoremIpsumHaunt.txt; sourceTree = "<group>"; };
 		7B97D8D2195BEBC70083210C /* HauntSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HauntSelectionViewController.h; sourceTree = "<group>"; };
 		7B97D8D3195BEBC70083210C /* HauntSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HauntSelectionViewController.m; sourceTree = "<group>"; };
 		7B97D8D5195BEDA70083210C /* ViewHauntViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewHauntViewController.h; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 		7BEF4030193128DE00D4B1ED /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7B718D251991AE3400A3E65C /* LoremIpsumHaunt.txt */,
 				7BEF4031193128DE00D4B1ED /* LABaHoHH-Info.plist */,
 				7BEF4032193128DE00D4B1ED /* InfoPlist.strings */,
 				7BEF4035193128DE00D4B1ED /* main.m */,
@@ -299,6 +302,7 @@
 			files = (
 				7BD334C0193D916100C2CE71 /* Main.storyboard in Resources */,
 				7BEF4045193128DF00D4B1ED /* Images.xcassets in Resources */,
+				7B718D261991AE3400A3E65C /* LoremIpsumHaunt.txt in Resources */,
 				7BEF4034193128DE00D4B1ED /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

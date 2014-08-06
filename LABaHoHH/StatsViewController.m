@@ -46,11 +46,17 @@
     
     _appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     
-    // For blacking out the screen during the lights off phase
     [self createExplorerStats];
+    
+    // For blacking out the screen during the lights off phase
     [self createBlackoutScreen];
     _blackoutScreen.hidden = YES;
     
+    // Instantiate ViewHauntViewController in order to call its viewDidLoad method
+    // which will allow the blackout screens to remain synced between tabs
+    UIViewController *viewController = [self.tabBarController.childViewControllers objectAtIndex:1];
+    [viewController view];
+     
     // Handles the data recieved over the mutipeer network
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(didReceiveDataWithNotification:)

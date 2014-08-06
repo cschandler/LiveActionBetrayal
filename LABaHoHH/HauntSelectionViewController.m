@@ -17,6 +17,7 @@
 @property NSString *explorerGuide;
 @property NSString *traitorGuide;
 @property long indexOfSelectedHaunt;
+@property Boolean hauntHasBeenSelected;
 
 @end
 
@@ -69,23 +70,27 @@
 // Selects the haunt guides to be sent to the explorers and traitor
 - (IBAction)selectHaunt:(UIButton *)sender {
     
-    // Split the txt file into seperate guides
-    NSArray *splitExplorerAndTraitorGuides = [_hauntContentArray[_indexOfSelectedHaunt] componentsSeparatedByString:@"***"];
-    _explorerGuide = [NSString stringWithString:splitExplorerAndTraitorGuides[0]];
-    _traitorGuide = [NSString stringWithString:splitExplorerAndTraitorGuides[1]];
-    
-    // Replaces the tableview with a textview so the watcher can preview the haunt
-    _hauntsTableView.hidden = YES;
-    _hauntTextView.hidden = NO;
-    _hauntTextView.text = _hauntContentArray[_indexOfSelectedHaunt];
-    
-    // Set up undo button in case the watcher doesnt want the haunt they chose
-    [_undoButton setEnabled:YES];
-    [_selectHauntButton setEnabled:NO];
-    
-    // Give the haunt guides to the app delegate in order to access them from another tab
-    _appDelegate.explorerGuide = _explorerGuide;
-    _appDelegate.traitorGuide = _traitorGuide;
+    // Only if a haunt had been selected
+    if (_hauntHasBeenSelected) {
+        
+        // Split the txt file into seperate guides
+        NSArray *splitExplorerAndTraitorGuides = [_hauntContentArray[_indexOfSelectedHaunt] componentsSeparatedByString:@"***"];
+        _explorerGuide = [NSString stringWithString:splitExplorerAndTraitorGuides[0]];
+        _traitorGuide = [NSString stringWithString:splitExplorerAndTraitorGuides[1]];
+        
+        // Replaces the tableview with a textview so the watcher can preview the haunt
+        _hauntsTableView.hidden = YES;
+        _hauntTextView.hidden = NO;
+        _hauntTextView.text = _hauntContentArray[_indexOfSelectedHaunt];
+        
+        // Set up undo button in case the watcher doesnt want the haunt they chose
+        [_undoButton setEnabled:YES];
+        [_selectHauntButton setEnabled:NO];
+        
+        // Give the haunt guides to the app delegate in order to access them from another tab
+        _appDelegate.explorerGuide = _explorerGuide;
+        _appDelegate.traitorGuide = _traitorGuide;
+    }
 }
 
 // Undoes the chosen haunt, allowing the watcher to chose another
@@ -120,6 +125,7 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     _indexOfSelectedHaunt = indexPath.row;
+    _hauntHasBeenSelected = TRUE;
 }
 
 @end

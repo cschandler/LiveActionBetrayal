@@ -33,7 +33,6 @@
 {
     [super viewDidLoad];
     
-    
     _appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     
     // Set up the blackout screen
@@ -58,18 +57,21 @@
 // Recieves data from the watcher device
 -(void)didReceiveDataWithNotification:(NSNotification *)notification {
     NSData *receivedData = [[notification userInfo] objectForKey:@"data"];
-    NSString *messageFromRecievedData = [[NSString alloc] initWithData:receivedData encoding:NSUTF8StringEncoding];
     
-    [self updateTextView:messageFromRecievedData];
+    // Only of the its a message large enough to be the haunt
+    if (receivedData.length > 140) {
+        NSString *messageFromRecievedData = [[NSString alloc] initWithData:receivedData encoding:NSUTF8StringEncoding];
+        [self updateTextView:messageFromRecievedData];
+    }
 }
 
 // If the recieved data is of appropriate length, add it to the textview
 -(void)updateTextView:(NSString *)messageFromRecievedData {
-    if (messageFromRecievedData.length > 140) {
-        dispatch_async(dispatch_get_main_queue(), ^(void) {
-            _hauntTextView.text = messageFromRecievedData;
-        });
-    }
+    
+    // On the main thread
+    dispatch_async(dispatch_get_main_queue(), ^(void) {
+        _hauntTextView.text = messageFromRecievedData;
+    });
 }
 
 
